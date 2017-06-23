@@ -108,6 +108,7 @@ namespace GitMaster.LoginWindow
                     GitMasterLocalization.Name.WaitingLicensePanelErrorTitle));
             titleTextBlock.Margin = new Thickness(0, 40, 0, 15);
 
+            //change method
             WebErrorPanel errorPanel = new WebErrorPanel();
             errorPanel.ShowError(message);
 
