@@ -97,6 +97,7 @@ namespace GitMaster.LoginWindow
 
         void ClearErrors()
         {
+            //change other method in bar for UU conflict
             mUserTextBox.HasValidationError = false;
             mUserErrorLabel.Text = string.Empty;
             mUserErrorLabel.Visibility = Visibility.Collapsed;
