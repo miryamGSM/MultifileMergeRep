@@ -128,6 +128,7 @@ namespace GitMaster.LoginWindow
 
         void ClearErrors()
         {
+            //change for for conflict src
             mUserTextBox.HasValidationError = false;
             mUserErrorLabel.Text = string.Empty;
             mUserErrorLabel.Visibility = Visibility.Collapsed;
