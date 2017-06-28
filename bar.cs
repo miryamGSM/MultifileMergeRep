@@ -108,6 +108,7 @@ namespace GitMaster.LoginWindow
 
         void BuildComponents()
         {
+//src
             mMascotImage = ControlBuilder.CreateImage(
                 GitMasterImages.GetImage(
                     GitMasterImages.ImageName.IllustrationLoginSkater));

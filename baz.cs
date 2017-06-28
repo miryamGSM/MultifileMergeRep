@@ -279,6 +279,7 @@ namespace Codice.CM.SemanticMerge.Gui.Merge
 
         Panel BuildComponents()
         {
+//src
             int ini = Environment.TickCount;
 
             Grid result = new Grid();
@@ -330,6 +331,38 @@ namespace Codice.CM.SemanticMerge.Gui.Merge
                 mContributorsView, mContributorsScrollView, mResultView);
 
             mLog.DebugFormat("BuildComponents time {0} ms", Environment.TickCount - ini);
+
+            return result;
+        }
+
+        Panel CreateContentErrorPanel(string message)
+        {
+//src
+            StackPanel result = new StackPanel();
+
+            TextBlock titleTextBlock = WebControlBuilder.CreateTitle(
+                GitMasterLocalization.GetString(
+                    GitMasterLocalization.Name.WaitingLicensePanelErrorTitle));
+            titleTextBlock.Margin = new Thickness(0, 40, 0, 15);
+
+            WebErrorPanel errorPanel = new WebErrorPanel();
+            errorPanel.ShowError(message);
+
+            mTeamInvitationCodeTextBox = WebControlBuilder.CreateTextBox(
+                GitMasterLocalization.GetString(
+                    GitMasterLocalization.Name.WaitingLicensePanelTeamInvitationCodeWatermark));
+
+            mGetLicenseButton = WebControlBuilder.CreateMainActionButton(
+                GitMasterLocalization.GetString(
+                    GitMasterLocalization.Name.GetLicenseButtonUppercase));
+            mGetLicenseButton.Click += GetLicenseButton_Click;
+
+            WebEntriesPacker.AddRelatedComponents(
+                result,
+                titleTextBlock,
+                errorPanel,
+                mTeamInvitationCodeTextBox,
+                mGetLicenseButton);
 
             return result;
         }
