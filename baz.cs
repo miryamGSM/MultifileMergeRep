@@ -279,6 +279,7 @@ namespace Codice.CM.SemanticMerge.Gui.Merge
 
         Panel BuildComponents()
         {
+//dst
             int ini = Environment.TickCount;
 
             Grid result = new Grid();
